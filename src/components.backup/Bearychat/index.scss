@@ -1,0 +1,71 @@
+@import "../../style/utilities";
+.xm-components-bearychat {
+	margin-bottom: 100px;
+	.ant-table-row td {
+		padding: 0;
+	}
+}
+.xm-card-bearychat {
+	display: flex;
+	padding: 0;
+	position: relative;
+	.xm-card-avatar {
+		padding: 1rem;
+		img {
+			width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			border: $border-normal
+		}
+	}
+	.xm-card-body {
+
+		p {
+			font-size: .85rem;
+			margin-bottom: .5rem;
+		}
+		.xm-card-sublist {
+			position: relative;
+			border-left-style: solid;
+			border-left-width: 4px;
+			padding-left: 1rem;
+			img {
+				width: 10rem;
+				border: .5rem solid #fff;
+				box-shadow: 0 0 1px 1px #eee;
+				transition: all .3s;
+				&:hover {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.xm-card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 3rem;
+		margin-bottom: .5rem;
+		h3 {
+			color: $c-font-dark;
+			font-size: 1.1rem;
+			margin: 0;
+			span {
+				display: inline-block;
+				margin-left: 1rem;
+				color: $c-font-light;
+				font-size: 1rem;
+			}
+		}
+		p {
+			margin: 0;
+			color: $c-font-lightest;
+			font-size: .8rem;
+		}
+	}
+	.xm-card-main {
+		padding: 1rem;
+		padding-left: 0;
+		flex: 1;
+	}
+}

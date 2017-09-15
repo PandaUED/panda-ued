@@ -1,0 +1,13 @@
+@import "../../style/utilities";
+.xm-components-nav-lite {
+	margin: 1rem 0;
+	background: #f8f8f8;
+	border-radius: 4px;
+	border: 0;
+	.ant-menu-item {
+		border: 0 !important;
+	}
+	.ant-menu-item-selected a {
+		color: $c-theme;
+	}
+}

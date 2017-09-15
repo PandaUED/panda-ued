@@ -1,0 +1,41 @@
+@import "../../style/utilities";
+footer {
+	background: #fff;
+	border-top: $border-normal;
+	box-sizing: border-box;
+	clear: both;
+	font-size: 12px;
+	position: relative;
+	z-index: 1;
+
+	ul {
+		list-style: none;
+		margin: 0 1rem;
+		overflow: hidden;
+
+		li {
+			float: left;
+			padding: 24px 2%;
+			width: 25%;
+
+			& > h2 {
+				font-size: 14px;
+				font-weight: 500;
+				margin: 0 auto 8px;
+			}
+
+			& > div {
+				margin: 0 8px 5px 0;
+			}
+		}
+	}
+
+	@include media("<md") {
+		text-align: center;
+
+		ul li {
+			float: none;
+			width: auto;
+		}
+	}
+}

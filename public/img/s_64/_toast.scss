@@ -1,0 +1,11 @@
+//
+// Created with TexturePacker http://www.codeandweb.com/texturepacker
+//
+// SmartUpdateHash: $TexturePacker:SmartUpdate:87dd086935426e7faef39329ee40adbc:1/1$
+//
+
+.sprite-toast { display:inline-block; overflow: hidden; background-repeat: no-repeat; background-image: url($img-url + 's_64/toast.png'); }
+
+.toast-false { width: 128px; height: 128px; background-position: -0px -0px; }
+.toast-loading { width: 128px; height: 128px; background-position: -0px -128px; }
+.toast-true { width: 128px; height: 128px; background-position: -0px -256px; }

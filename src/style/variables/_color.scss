@@ -1,0 +1,70 @@
+/*
+theme
+*/
+$c-theme: #ff6700;
+
+/*
+theme-extend
+*/
+$c-theme-dark: #ff3a00;
+$c-theme-light: #ff6f00;
+$c-theme-lightest: #ff8400;
+
+/*
+linear
+*/
+$c-linear: linear-gradient(45deg, $c-theme 0%, $c-theme-lightest 100%);
+
+/*
+theme-extra
+*/
+$c-theme-yellow: #ffe500;
+$c-theme-link: #4d9bfa;
+$c-theme-grey: #5f5750;
+$c-theme-bg: rgba(207, 155, 90, 0.1);
+$c-theme-line: rgba(207, 155, 90, 0.2);
+$c-theme-font: #efce9f;
+$c-theme-bg-light: #f8f8f8;
+
+/*
+theme-extra-color
+*/
+$c-red: #ff5a5f;
+$c-yellow: #fdc90b;
+$c-green: #78c936;
+$c-blue: #2b99ff;
+$c-purple: #c68cf7;
+
+/*
+font
+*/
+$c-font-dark: rgba(0, 0, 0, 0.8);
+$c-font-normal: rgba(0, 0, 0, 0.6);
+$c-font-light: rgba(0, 0, 0, 0.4);
+$c-font-lightest: rgba(0, 0, 0, 0.2);
+$c-font-white: rgba(255, 255, 255, 0.9);
+
+/*
+grey
+*/
+$c-grey-dark: rgba(0, 0, 0, 0.3);
+$c-grey-normal: rgba(0, 0, 0, 0.04);
+$c-grey-light: rgba(0, 0, 0, 0.03);
+$c-grey-lightest: rgba(0, 0, 0, 0.02);
+$c-grey-white: rgba(255, 255, 255, 0.5);
+
+/*
+line
+*/
+$c-line-dark: rgba(0, 0, 0, 0.24);
+$c-line-normal: rgba(0, 0, 0, 0.12);
+$c-line-light: rgba(0, 0, 0, 0.04);
+$c-line-white: rgba(255, 255, 255, 0.2);
+
+/*
+border
+*/
+$border-dark: 1px solid $c-line-dark;
+$border-normal: 1px solid $c-line-normal;
+$border-light: 1px solid $c-line-light;
+$border-white: 1px solid $c-line-white;

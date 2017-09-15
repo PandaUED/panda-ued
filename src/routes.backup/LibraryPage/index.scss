@@ -1,0 +1,41 @@
+@import "../../style/utilities";
+#xm-librarypage {
+
+	@include media(">md") {
+		margin: 0 !important;
+	}
+	.ant-card {
+		margin-bottom: 1rem;
+		margin-right: 1rem;
+		@include media("<md") {
+			margin: 1rem;
+		}
+	}
+	.library-cover {
+		height: 12rem;
+		overflow: hidden;
+		border-bottom: $border-light;
+	}
+	.library-body {
+		padding: 1rem;
+		h3 {
+			font-size: 1rem;
+			margin-bottom: 0;
+			color: $c-font-normal
+		}
+		p {
+			font-size: .5rem;
+			color: $c-font-lightest;
+			margin-bottom: 0;
+		}
+	}
+	.ant-card {
+		width: 30%;
+		@include media("<lg") {
+			width: 45%;
+		}
+		@include media("<md") {
+			width: 100%;
+		}
+	}
+}

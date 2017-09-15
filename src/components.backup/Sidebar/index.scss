@@ -1,0 +1,62 @@
+@import "../../style/utilities";
+.xm-components-sidebar {
+	.ant-menu-submenu-title h4,
+	.ant-menu-inline > .ant-menu-item,
+	.ant-menu-inline .ant-menu-item a {
+		font-size: 14px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.ant-menu-submenu-title {
+		color: $c-font-normal;
+		&:hover {
+			color: $c-theme;
+		}
+		a {
+			color: $c-font-normal;
+			&:hover {
+				color: $c-theme;
+			}
+		}
+	}
+	a[disabled] {
+		color: #ccc;
+	}
+
+	.menu-item-link-outside {
+		position: relative;
+
+		.anticon {
+			font-size: 12px;
+			position: absolute;
+			top: 16px;
+			right: -4px;
+			transition: all 0.3s;
+			opacity: 0;
+			color: #999;
+		}
+
+		&:hover .anticon {
+			opacity: 1;
+		}
+	}
+	.xm-menuitem {
+		font-size: 14px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		a {
+			text-transform: capitalize;
+		}
+	}
+	.chinese {
+		font-size: 12px;
+		font-weight: normal;
+		margin-left: 6px;
+		opacity: 0.67;
+	}
+	.ant-menu-sub li a{
+		font-size: 95% !important;
+		margin-left: .5rem;
+	}
+}

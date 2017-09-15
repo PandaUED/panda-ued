@@ -1,0 +1,48 @@
+@import "../../style/utilities";
+.demo-nav {
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 15px;
+	background: #f8f8f8;
+}
+.demo-nav a {
+	line-height: 30px;
+	padding: 0 10px;
+}
+.app-list {
+	margin-top: 15px;
+}
+.xm-router-tools {
+	.ant-card {
+		margin-bottom: 1rem;
+		.group{
+			margin-top: 1rem;
+		}
+	}
+
+	.ant-card-body h3 {
+		font-size: 1.1rem;
+		margin: 2rem 0 .6rem 0;
+		&:first-child{
+			margin-top: 0;
+		}
+
+
+	}
+	#preview {
+		zoom: .5;
+	}
+	.ant-btn {
+		width: 100%;
+		padding: .5rem;
+		margin-top: 1rem;
+	}
+	.ant-alert {
+		margin: 1rem 0;
+		width: 450px;
+	}
+	#cover-upload {
+		height: auto;
+	}
+}
+
