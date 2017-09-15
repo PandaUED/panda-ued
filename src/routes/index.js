@@ -10,7 +10,6 @@ const MakeRoute = (page) => <Route
 />;
 export default () => (
 	<App>
-		124
 		<Route path="/" component={Loading}/>
 		<Switch>
 			<Route exact path="/" component={Home}/>

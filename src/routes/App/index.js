@@ -1,6 +1,6 @@
 import { Layout } from 'antd';
-import {Header} from '../../components'
-const {Content, Footer} = Layout;
+import {Header,Footer} from '../../components'
+const {Content} = Layout;
 
 export default ({children}) => {
 
