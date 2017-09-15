@@ -11,7 +11,7 @@ export default {
 	},
 	effects      : {
 		*GET({}, {call, put, select}) {
-			const location = yield select(state => state.routing.locationBeforeTransitions.pathname);
+			const location = window.location.pathname
 			const path     = location.replace('/preview', '/library')
 			const data     = yield call(() => request(`/api/data${path}data.json`));
 			yield put({

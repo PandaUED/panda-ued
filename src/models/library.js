@@ -10,13 +10,11 @@ export default {
 		},
 	},
 	effects      : {
-		*GET({}, {call, put, select}) {
-			const location = yield select(state => state.routing.locationBeforeTransitions.pathname);
+		*GET({}, {call, put}) {
 			const data     = yield call(() => request("/api/data/data/library.json"));
-			let path       = location.split('/')[2]
 			yield put({
 				          type   : 'save',
-				          payload: data.data[path],
+				          payload: data.data,
 			          });
 		},
 	},

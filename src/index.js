@@ -22,8 +22,8 @@ app.use(createLoading());
 //app.model(require('./models/nav'));
 //app.model(require('./models/showcase'));
 //app.model(require('./models/markdown'));
-//app.model(require('./models/library'));
-//app.model(require('./models/preview'));
+app.model(require('./models/library'));
+app.model(require('./models/preview'));
 //app.model(require('./models/bearychat'));
 
 // 4. Router
