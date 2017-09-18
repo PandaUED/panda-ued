@@ -1,34 +1,36 @@
-* {
-	-webkit-font-smoothing: antialiased;
-	box-sizing: border-box;
-	outline: none !important;
-	box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-*[contenteditable] {
-	-webkit-user-select: auto !important;
-}
-*:focus {
-	outline: none;
-}
-html, body, :global(#root) {
-	height: 100%;
-}
-html {
-	background: #f8f8f8;
-}
-body {
-	font-family: system, -apple-system, ".SFNSDisplay-Regular", HelveticaNeue, LucidaGrande, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-	font-size: 16px;
-	user-select: none;
-	color:#444;
-}
-a {
-	background: transparent;
-	text-decoration: none;
-	outline: none;
+:global {
+	* {
+		-webkit-font-smoothing: antialiased;
+		box-sizing: border-box;
+		outline: none !important;
+		box-sizing: border-box;
+	}
+	*,
+	*:before,
+	*:after {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	*[contenteditable] {
+		-webkit-user-select: auto !important;
+	}
+	*:focus {
+		outline: none;
+	}
+	html, body, #root {
+		height: 100%;
+	}
+	html {
+		background: #fff;
+	}
+	body {
+		font-family: system, -apple-system, ".SFNSDisplay-Regular", HelveticaNeue, LucidaGrande, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+		font-size: 16px;
+		user-select: none;
+		color: #444;
+	}
+	a {
+		background: transparent;
+		text-decoration: none;
+		outline: none;
+	}
 }

@@ -18,14 +18,12 @@ const app = dva({
 app.use(createLoading());
 
 // 3. Model
-//app.model(require('./models/package'));
-//app.model(require('./models/nav'));
-//app.model(require('./models/showcase'));
-//app.model(require('./models/markdown'));
-//app.model(require('./models/library'));
-//app.model(require('./models/preview'));
-//app.model(require('./models/bearychat'));
-
+app.model(require('./models/library'));
+app.model(require('./models/preview'));
+app.model(require('./models/robot'));
+app.model(require('./models/channel'));
+app.model(require('./models/bearychat'));
+app.model(require('./models/pandtoc'));
 // 4. Router
 app.router(require('./router'));
 

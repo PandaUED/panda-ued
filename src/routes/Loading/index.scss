@@ -1,11 +1,12 @@
-
-$c-primary: #ff6700;
-#nprogress {
-	.bar {
-		background: $c-primary !important;
-	}
-	.spinner-icon {
-		border-top-color: $c-primary !important;
-		border-left-color: $c-primary !important;
+@import "var";
+:global {
+	#nprogress {
+		.bar {
+			background: $c-primary !important;
+		}
+		.spinner-icon {
+			border-top-color: $c-primary !important;
+			border-left-color: $c-primary !important;
+		}
 	}
 }

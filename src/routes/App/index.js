@@ -1,15 +1,21 @@
-import { Layout } from 'antd';
-import {Header,Footer} from '../../components'
-const {Content} = Layout;
+import styled from 'styled-components';
+import { Footer, Header } from '../../components';
 
 export default ({children}) => {
 
+	const Layout = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	`;
+
 	return (
 		<Layout>
-			<Header location={window.location} />
-			<Content>
+			<Header location={window.location}/>
+			<Layout style={{paddingTop: '80px'}}>
 				{children}
-			</Content>
+			</Layout>
 			<Footer/>
 		</Layout>
 	);

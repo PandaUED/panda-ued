@@ -1,8 +1,14 @@
 export default {
 	entry            : 'src/index.js',
 	publicPath       : '/',
-	disableCSSModules: true,
-	sass             : true,
+	disableCSSModules: false,
+	sass             : {
+		sourceMap   : process.env.NODE_ENV === 'development',
+		includePaths: [
+			'node_modules',
+			'src/style'
+		]
+	},
 	hash             : true,
 	theme            : 'src/style/theme.js',
 	extraBabelPlugins: [
@@ -13,9 +19,6 @@ export default {
 			{libraryName: 'antd', style: true}
 		]
 	],
-	externals        : {
-		jquery: 'window.$'
-	},
 	proxy            : {
 		'/api': {
 			target      : 'http://ued.xiongmaojinku.com',

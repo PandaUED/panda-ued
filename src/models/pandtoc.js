@@ -2,7 +2,7 @@ import request from '../utils/request';
 
 
 export default {
-	namespace    : 'library',
+	namespace    : 'pandtoc',
 	state        : {},
 	reducers     : {
 		save(state, {payload: data}) {
@@ -11,7 +11,7 @@ export default {
 	},
 	effects      : {
 		*GET({}, {call, put}) {
-			const data     = yield call(() => request("/api/data/data/library.json"));
+			const data     = yield call(() => request("/api/pand/toc"));
 			yield put({
 				          type   : 'save',
 				          payload: data.data,
@@ -21,10 +21,7 @@ export default {
 	subscriptions: {
 		setup({dispatch, history}) {
 			return history.listen(location => {
-				let path = location.pathname.split('/')[1];
-				if (path === 'library' || path === 'preview') {
-					dispatch({type: 'GET'});
-				}
+				if (location.pathname.indexOf('pand') !== -1) dispatch({type: 'GET'});
 			});
 		},
 	},

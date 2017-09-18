@@ -1,13 +1,17 @@
-import { Layout } from 'antd';
 import { Link } from 'dva/router';
 import styled from 'styled-components';
-import { style } from '../';
+import { style, View } from '../';
 import { navBar } from '../../config';
-
-const {Header} = Layout;
 
 export default ({location}) => {
 	const pathname = location.pathname;
+
+	const NavBar = styled(View)`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height:5rem;
+	`;
 
 	const Logo = styled.div`
 	display: flex;
@@ -17,18 +21,10 @@ export default ({location}) => {
 	font-weight: 600;
 	>span{
 	margin-right: .2rem;
-		background-image: ${style.gradient.primary(45)};
-	   -webkit-background-clip: text;
-	   -webkit-text-fill-color: transparent;
+	background-image: ${style.gradient.primary(45)};
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 	}
-	`;
-
-	const NavBar = styled(Header)`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height:5rem;
-	${style.split.bottom}
 	`;
 
 	const Menu = styled.div`
@@ -47,7 +43,7 @@ export default ({location}) => {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		border-bottom:3px solid ${(location.pathname === to) ? style.color.primary : `transparent`}
+		border-bottom:3px solid ${(pathname.indexOf(to) !== -1) ? style.color.primary : `transparent`}
 	`;
 		return <Item to={to} children={title}/>;
 	};
@@ -57,7 +53,14 @@ export default ({location}) => {
 	));
 
 	return (
-		<NavBar>
+		<NavBar style={{
+			zIndex:2,
+			position:'fixed',
+			top:0,
+			left:0,
+			background:`#fff`,
+			boxShadow: `0 3px 6px 0 rgba(0,0,0,.04)`
+		}}>
 			<Logo><span>Panda</span> Design</Logo>
 			<Menu>
 				{showDesktop}

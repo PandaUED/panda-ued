@@ -6,10 +6,6 @@
   "author": "CanisMinor",
   "contact": "yangyufan@xmzhen.com",
   "copyright": "©2016 熊猫金库UED出品",
-  "cookie": {
-    "bearychat": "12291%3A14104",
-    "bearychat_12291": "QSKw9xq%2BgEBp7dc3DrTYlw%3D%3D"
-  },
   "scripts": {
     "start": "roadhog server",
     "build": "roadhog build",
@@ -26,7 +22,8 @@
   "dependencies": {
     "antd": "^2.13.1",
     "babel-runtime": "^6.26.0",
-    "dva": "^2.0.1",
+    "classnames": "^2.2.5",
+    "dva": "^2.0.3",
     "dva-loading": "^1.0.0",
     "gitment": "^0.0.3",
     "highlight.js": "^9.12.0",
@@ -38,8 +35,7 @@
     "react-dom": "^15.4.0",
     "react-lazyload": "^2.2.7",
     "react-typist": "^1.1.1",
-    "styled-components": "^2.1.2",
-    "classnames": "^2.2.5"
+    "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -63,8 +59,6 @@
     "lodash": "^4.17.4",
     "markd": "^1.2.0",
     "node-sass": "^4.5.3",
-    "react-disqus-thread": "^0.4.0",
-    "react-markdown": "^2.4.4",
     "redbox-react": "^1.3.2",
     "require-dir": "^0.3.1",
     "roadhog": "^1.2.2",
