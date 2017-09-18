@@ -19,6 +19,7 @@ app.use(createLoading());
 
 // 3. Model
 app.model(require('./models/library'));
+app.model(require('./models/libraryPage'));
 app.model(require('./models/preview'));
 app.model(require('./models/robot'));
 app.model(require('./models/channel'));

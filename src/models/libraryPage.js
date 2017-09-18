@@ -1,7 +1,7 @@
 import request from '../utils/request';
 
 export default {
-	namespace    : 'lib',
+	namespace    : 'libPage',
 	state        : {},
 	reducers     : {
 		save(state, {payload: data}) {
@@ -10,7 +10,8 @@ export default {
 	},
 	effects      : {
 		* GET({}, {call, put}) {
-			const data = yield call(() => request('/api/data/toc/toc'));
+			const page = window.location.pathname.split('library/')[1]
+			const data = yield call(() => request(`/api/data/toc/${page}`));
 			yield put({
 				          type   : 'save',
 				          payload: data.data
@@ -20,7 +21,7 @@ export default {
 	subscriptions: {
 		setup({dispatch, history}) {
 			return history.listen(location => {
-				if (location.pathname.indexOf('/library') !== -1) dispatch({type: 'GET'});
+				if (location.pathname.indexOf('/library/') !== -1) dispatch({type: 'GET'});
 			});
 		}
 	}
