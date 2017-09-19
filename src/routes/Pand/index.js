@@ -1,10 +1,30 @@
-import { View } from '../../components';
+import { connect } from 'dva';
+import { Redirect, Route } from 'dva/router';
+import _ from 'lodash';
+import path from 'path';
+import styled from 'styled-components';
+import { PandMenu, ToIndex, View } from '../../components';
+import Page from './Page';
 
-export default () => {
+function mapStateToProps(state) {
+	return {
+		pandtoc: state.pandtoc,
+		loading: state.loading.global
+	};
+}
+
+export default connect(mapStateToProps)(({pandtoc, loading}) => {
+	const PandView = styled(View)`
+	display: flex;
+	`;
 
 	return (
-		<View>
-pand
-		</View>
+		<PandView>
+			<PandMenu data={pandtoc}/>
+			{!loading ? <ToIndex path="/pand"
+			                     to={path.join('pand', _.kebabCase(Object.values(pandtoc)[0][0].name))}
+			/> : ''}
+			<Route path="/pand/:page" component={Page}/>
+		</PandView>
 	);
-}
+});

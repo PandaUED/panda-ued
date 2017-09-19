@@ -1,9 +1,10 @@
 import { Layout } from 'antd';
 import { Redirect, Route, Switch } from 'dva/router';
 import styled from 'styled-components';
-import { Menu, style, View } from '../../components';
+import { Menu, style, View,ToIndex } from '../../components';
 import { homeMenu } from '../../config';
 import Page from './Page';
+import About from './About';
 
 export default ({location}) => {
 
@@ -59,11 +60,11 @@ export default ({location}) => {
 				</TextBox>
 			</Showcase>
 			<ContentView>
-				<Menu location={location} data={homeMenu}/>
-				<Route exact path="/home" render={() => (<Redirect to={homeMenu[0].to}/>)}/>
-				<Route path="/home/:page" component={Page}/>
+				<Menu data={homeMenu}/>
+				<ToIndex path="/home" to={homeMenu[0].to} />
+				<Route exact path="/home/about" component={About}/>
+				<Route path="/home/page/:page" component={Page}/>
 			</ContentView>
-
 		</Layout>
 	);
 }

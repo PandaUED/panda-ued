@@ -5,13 +5,17 @@ import { rgba } from 'polished';
 import styled from 'styled-components';
 import { style } from '../';
 
-export default ({data, location, ...other}) => {
-	const pathname = location.pathname;
+export default ({data, ...other}) => {
 
+	if (!data) return <div/>
+
+	const pathname = window.location.pathname;
 	const Menu = styled.div`
-	width: 8rem;
 	display: flex;
 	flex-direction: column;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
 	padding: 1rem 0;
 	`;
 
@@ -19,12 +23,13 @@ export default ({data, location, ...other}) => {
 
 		let Item = styled(Link)`
 		display: block;
-		text-align: center;
+		text-align: left;
+		padding:0 3rem;
 		line-height: 44px;
 		border-radius: 22px;
-		color: #666;
+		color: #999;
 		margin-bottom: 1rem;
-
+		background: #f8f8f8;
 	`;
 
 		if (pathname.indexOf(path.join('library', to)) !== -1) Item = Item.extend`

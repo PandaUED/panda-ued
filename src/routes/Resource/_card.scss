@@ -1,0 +1,25 @@
+#sidecard {
+	h3 {
+		margin: 1rem 0;
+	}
+	.ant-select-selection,input{
+		height: 44px;
+		line-height: 44px;
+		padding:.5rem 1rem;
+	}
+	#cover-upload{
+		padding: 0;
+		border:none;
+		height: 28px;
+		line-height: 24px;
+		margin-bottom: 2rem;
+	}
+	#save {
+		margin-bottom: 1rem;
+		width: 100%;
+		border-radius: 48px;
+		height: 48px;
+		background: linear-gradient(-45deg,#FF6700 0%,#FFA000 100%);
+		box-shadow: 0 4px 8px 0 rgba(255,103,0,0.4);
+	}
+}

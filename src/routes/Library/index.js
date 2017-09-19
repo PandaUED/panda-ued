@@ -1,22 +1,29 @@
 import { connect } from 'dva';
-import { Redirect, Route } from 'dva/router';
+import { Link, Route } from 'dva/router';
 import path from 'path';
-import { LibMenu, View } from '../../components';
+import styled from 'styled-components';
+import { LibMenu, ToIndex, View } from '../../components';
+import Page from './Page';
 
 function mapStateToProps(state) {
 	return {
 		lib    : state.lib,
-		libPage: state.libPage,
 		loading: state.loading.global
 	};
 }
 
-export default connect(mapStateToProps)(({lib, libPage, loading, location}) => {
+export default connect(mapStateToProps)(({lib, loading}) => {
+	const LibView = styled(View)`
+	display: flex;
+	`;
+
 	return (
-		<View>
-			<LibMenu location={location} data={lib}/>
-			<Route exact path="/library"
-			       render={() => (<Redirect to={path.join('library', lib['熊猫金库'][0])}/>)}/>
-		</View>
+		<LibView>
+			<LibMenu data={lib}/>
+			{!loading
+			? <ToIndex path="/library" to={path.join('library', Object.values(lib)[0][0])}/>
+			: ''}
+			<Route path="/library/:page" component={Page}/>
+		</LibView>
 	);
 });

@@ -12,7 +12,7 @@ export default ({children}) => {
 
 	return (
 		<Layout>
-			<Header location={window.location}/>
+			<Header/>
 			<Layout style={{paddingTop: '80px'}}>
 				{children}
 			</Layout>

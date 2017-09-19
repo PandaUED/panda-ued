@@ -1,0 +1,27 @@
+@import "var";
+
+@font-face {
+	font-family: "MF YueHei";
+	src: url(/fonts/mf-yuehei.otf) format('opentype');
+}
+@font-face {
+	font-family: "HKZongYi";
+	src: url(/fonts/hk-zongyi.TTF) format('truetype');
+}
+
+:global {
+	@import "colorpicker";
+	@import "cover";
+	@import "../card";
+	#preview {
+		width: 900px;
+		height: 500px;
+		zoom: .5
+	}
+	.cutting {
+		position: fixed;
+		z-index: 999999;
+		left: 0;
+		top: 0;
+	}
+}

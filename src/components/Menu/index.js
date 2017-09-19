@@ -3,8 +3,8 @@ import { rgba } from 'polished';
 import styled from 'styled-components';
 import { style } from '../';
 
-export default ({data, location, ...other}) => {
-	const pathname = location.pathname;
+export default ({data, ...other}) => {
+	const pathname = window.location.pathname;
 
 	const Menu = styled.div`
 	min-width: 10rem;
@@ -22,7 +22,6 @@ export default ({data, location, ...other}) => {
 		border-radius: 22px;
 		color: #666;
 		margin-bottom: 1rem;
-
 	`;
 
 		if (pathname === to) Item = Item.extend`

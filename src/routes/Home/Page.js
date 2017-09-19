@@ -1,7 +1,7 @@
 import { Table } from 'antd';
 import { connect } from 'dva';
 import styled from 'styled-components';
-import { Markdown } from '../../components';
+import { Markdown,Comment } from '../../components';
 import buildMessage from '../../utils/buildMessage';
 import style from './index.scss';
 
@@ -92,6 +92,7 @@ export default connect(mapStateToProps)(({
 				dataSource={data}
 				loading={loading}
 			/>
+			<Comment/>
 		</View>
 	);
 });

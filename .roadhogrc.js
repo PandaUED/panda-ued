@@ -11,6 +11,9 @@ export default {
 	},
 	hash             : true,
 	theme            : 'src/style/theme.js',
+	externals        : {
+		jquery: 'window.$'
+	},
 	extraBabelPlugins: [
 		'transform-runtime',
 		'lodash',

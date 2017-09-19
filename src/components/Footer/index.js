@@ -10,6 +10,7 @@ export default () => {
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
+		margin-top: 4rem;
 	`;
 	const Box       = styled.div`
 		width: 20rem;

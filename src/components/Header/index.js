@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { style, View } from '../';
 import { navBar } from '../../config';
 
-export default ({location}) => {
-	const pathname = location.pathname;
+export default () => {
+	const pathname = window.location.pathname;
 
 	const NavBar = styled(View)`
 	display: flex;
@@ -54,7 +54,7 @@ export default ({location}) => {
 
 	return (
 		<NavBar style={{
-			zIndex:2,
+			zIndex:9999,
 			position:'fixed',
 			top:0,
 			left:0,

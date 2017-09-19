@@ -21,6 +21,7 @@ export default () => (
 			{MakeRoute('Library')}
 			{MakeRoute('Pand')}
 			{MakeRoute('Resource')}
+			{MakeRoute('Preview')}
 		</Switch>
 	</App>
 )

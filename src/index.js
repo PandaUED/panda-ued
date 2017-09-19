@@ -25,6 +25,7 @@ app.model(require('./models/robot'));
 app.model(require('./models/channel'));
 app.model(require('./models/bearychat'));
 app.model(require('./models/pandtoc'));
+app.model(require('./models/pand'));
 // 4. Router
 app.router(require('./router'));
 

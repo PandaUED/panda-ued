@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default (data, robot) => {
 	let Message = [];
 	data.forEach(item => {
@@ -50,5 +52,5 @@ export default (data, robot) => {
 		Message.push(newData);
 	});
 
-	return Message;
+	return _.reverse(Message)
 }
