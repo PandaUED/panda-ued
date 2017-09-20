@@ -1,6 +1,6 @@
 # XMUED
 
-![](http://ued.xiongmaojinku.com/img/site-logo.png)
+<img src="https://o4j4l4n7h.qnssl.com/2017-09-20-icon.png" width="360" />
 
 ```bash
 # 安装起来
