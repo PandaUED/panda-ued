@@ -2,6 +2,7 @@ import 'classnames';
 import 'dva';
 import 'dva-loading';
 import 'gitment';
+import 'gitment/style/default.css';
 import 'highlight.js';
 import 'history';
 import 'nprogress';
