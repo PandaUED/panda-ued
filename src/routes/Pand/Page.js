@@ -4,7 +4,7 @@ import { Redirect, Route } from 'dva/router';
 import _ from 'lodash';
 import path from 'path';
 import styled from 'styled-components';
-import { Markdown, PandFrame } from '../../components';
+import { Comment, Markdown, PandFrame } from '../../components';
 
 function mapStateToProps(state) {
 	return {
@@ -85,7 +85,7 @@ class Pand extends React.Component {
 		if (!loading) {
 			const Split    = '## API';
 			const Data     = pand.body.split(Split);
-			const PandPath = path.join('https://xmui.xiongmaojinku.com/', _.kebabCase(pand.name));
+			const PandPath = 'https://' + path.join('xmui.xiongmaojinku.com/', _.kebabCase(pand.name));
 
 			if (this.state.fullscreen) {
 				CodeView     = CodeView.extend`
@@ -135,6 +135,7 @@ class Pand extends React.Component {
 				      spinning={loading}
 				      size="large"/>
 				{Content}
+				<Comment/>
 			</View>
 		);
 	}

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Markdown } from '../../components';
-import {DownloadList} from '../../config'
+import { DownloadList } from '../../config';
+
 export default ({}) => {
 	const View = styled.div`
 	margin-left: 2rem;
@@ -34,8 +35,6 @@ export default ({}) => {
 	`;
 
 	const Md = '# 资源下载\n这里提供 Panda Design 相关设计资源和设计工具的下载，更多设计资源正在整理和完善中。';
-
-
 
 	const DownloadCard = ({url, icon, title, desc}) => {
 
