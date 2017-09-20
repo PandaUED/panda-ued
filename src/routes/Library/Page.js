@@ -41,7 +41,7 @@ export default connect(mapStateToProps)(({loading, libPage}) => {
 		const Cover = styled.div`
 		width: 100%;
 		height: 240px;
-		background: url(${path.join('https://ued.xiongmaojinku.com/api/data/', item.url, 'cover.png')});
+		background: url("https://"+${path.join('ued.xiongmaojinku.com/api/data/', item.url, 'cover.png')});
 		background-size: 100% auto ;
 		border-bottom: 1px solid #f8f8f8;
 		`;
