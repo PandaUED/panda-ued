@@ -6,7 +6,7 @@
 - **Panda Design:** <http://xmui.xiongmaojinku.com/>
 
 ```bash
-# 安装起来
+# 安装环境
 $ yarn
 
 # 本地启动
