@@ -1,20 +1,30 @@
+import cssnano from 'cssnano';
+import pxtorem from 'postcss-pxtorem';
+
 export default {
-	entry            : 'src/index.js',
-	publicPath       : '/',
-	disableCSSModules: false,
-	sass             : {
+	entry              : 'src/index.js',
+	publicPath         : '/',
+	multipage          : true,
+	disableCSSModules  : false,
+	hash               : true,
+	sass               : {
 		sourceMap   : process.env.NODE_ENV === 'development',
 		includePaths: [
 			'node_modules',
 			'src/style'
 		]
 	},
-	hash             : true,
-	theme            : 'src/style/theme.js',
-	externals        : {
+	theme              : 'src/style/theme.js',
+	externals          : {
 		jquery: 'window.$'
 	},
-	extraBabelPlugins: [
+	extraPostCSSPlugins: [
+		pxtorem({
+			        rootValue    : 16,
+			        propWhiteList: []
+		        })
+	],
+	extraBabelPlugins  : [
 		'transform-runtime',
 		'lodash',
 		[
@@ -22,7 +32,7 @@ export default {
 			{libraryName: 'antd', style: true}
 		]
 	],
-	proxy            : {
+	proxy              : {
 		'/api': {
 			target      : 'http://ued.xiongmaojinku.com',
 			changeOrigin: true,
@@ -30,20 +40,30 @@ export default {
 			secure      : true
 		}
 	},
-	autoprefixer     : {
+	autoprefixer       : {
 		browsers: [
 			'iOS >= 8',
 			'Android >= 4'
 		]
 	},
-	env              : {
+	env                : {
 		development: {
 			extraBabelPlugins: [
 				'dva-hmr'
 			]
+		},
+		production : {
+			extraPostCSSPlugins: [
+				cssnano({
+					        preset: [
+						        'default',
+						        {discardComments: {removeAll: true}}
+					        ]
+				        })
+			]
 		}
 	},
-	dllPlugin        : {
+	dllPlugin          : {
 		exclude: [
 			'babel-runtime'
 		],
