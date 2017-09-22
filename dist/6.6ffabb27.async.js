@@ -53,10 +53,11 @@ webpackJsonp([6, 16, 18], {
   293: function(o, e, c) {
     'use strict';
     !(function(o) {
-      var e = void 0,
-        c = void 0,
-        t = 0,
-        r = {
+      var e,
+        c,
+        t,
+        r = 0,
+        l = {
           control: o('<div class="colorPicker-picker">&nbsp;</div>'),
           palette: o(
             '<div id="colorPicker_palette" class="colorPicker-palette" />'
@@ -64,77 +65,76 @@ webpackJsonp([6, 16, 18], {
           swatch: o('<div class="colorPicker-swatch">&nbsp;</div>'),
           hexLabel: o('<label for="colorPicker_hex">Hex</label>'),
           hexField: o('<input type="text" id="colorPicker_hex" />'),
-        },
-        l = void 0;
+        };
       (o.fn.colorPicker = function(e) {
         return this.each(function() {
-          var c = o(this),
-            l = o.extend({}, o.fn.colorPicker.defaults, e),
-            a = o.fn.colorPicker.toHex(
-              c.val().length > 0 ? c.val() : l.pickerDefault
+          var c,
+            t,
+            a = o(this),
+            n = o.extend({}, o.fn.colorPicker.defaults, e),
+            i = o.fn.colorPicker.toHex(
+              a.val().length > 0 ? a.val() : n.pickerDefault
             ),
-            n = r.control.clone(),
-            i = r.palette.clone().attr('id', 'colorPicker_palette-' + t),
-            s = r.hexLabel.clone(),
-            d = r.hexField.clone(),
-            f = i[0].id,
-            g = void 0,
-            u = void 0;
+            s = l.control.clone(),
+            d = l.palette.clone().attr('id', 'colorPicker_palette-' + r),
+            f = l.hexLabel.clone(),
+            g = l.hexField.clone(),
+            u = d[0].id;
           if (
-            (o.each(l.colors, function(e) {
-              (g = r.swatch.clone()),
-                'transparent' === l.colors[e]
-                  ? (g.addClass('transparent').text('X'),
-                    o.fn.colorPicker.bindPalette(d, g, 'transparent'))
-                  : (g.css('background-color', '#' + this),
-                    o.fn.colorPicker.bindPalette(d, g)),
-                g.appendTo(i);
+            (o.each(n.colors, function(e) {
+              (c = l.swatch.clone()),
+                'transparent' === n.colors[e]
+                  ? (c.addClass('transparent').text('X'),
+                    o.fn.colorPicker.bindPalette(g, c, 'transparent'))
+                  : (c.css('background-color', '#' + this),
+                    o.fn.colorPicker.bindPalette(g, c)),
+                c.appendTo(d);
             }),
-            s.attr('for', 'colorPicker_hex-' + t),
-            d.attr({ id: 'colorPicker_hex-' + t, value: a }),
-            d.bind('keydown', function(e) {
+            f.attr('for', 'colorPicker_hex-' + r),
+            g.attr({ id: 'colorPicker_hex-' + r, value: i }),
+            g.bind('keydown', function(e) {
               if (13 === e.keyCode) {
-                var t = o.fn.colorPicker.toHex(o(this).val());
-                o.fn.colorPicker.changeColor(t || c.val());
+                var c = o.fn.colorPicker.toHex(o(this).val());
+                o.fn.colorPicker.changeColor(c || a.val());
               }
               27 === e.keyCode && o.fn.colorPicker.hidePalette();
             }),
-            d.bind('keyup', function(e) {
-              var t = o.fn.colorPicker.toHex(o(e.target).val());
-              o.fn.colorPicker.previewColor(t || c.val());
+            g.bind('keyup', function(e) {
+              var c = o.fn.colorPicker.toHex(o(e.target).val());
+              o.fn.colorPicker.previewColor(c || a.val());
             }),
             o('<div class="colorPicker_hexWrap" />')
-              .append(s)
-              .appendTo(i),
-            i.find('.colorPicker_hexWrap').append(d),
-            !1 === l.showHexField && (d.hide(), s.hide()),
-            o('body').append(i),
-            i.hide(),
-            n.css('background-color', a),
-            n.bind('click', function() {
-              c.is(':not(:disabled)') &&
-                o.fn.colorPicker.togglePalette(o('#' + f), o(this));
+              .append(f)
+              .appendTo(d),
+            d.find('.colorPicker_hexWrap').append(g),
+            !1 === n.showHexField && (g.hide(), f.hide()),
+            o('body').append(d),
+            d.hide(),
+            s.css('background-color', i),
+            s.bind('click', function() {
+              a.is(':not(:disabled)') &&
+                o.fn.colorPicker.togglePalette(o('#' + u), o(this));
             }),
             e && e.onColorChange
-              ? n.data('onColorChange', e.onColorChange)
-              : n.data('onColorChange', function() {}),
-            (u = c.data('text')) && n.html(u),
-            c.after(n),
-            c.bind('change', function() {
-              c
+              ? s.data('onColorChange', e.onColorChange)
+              : s.data('onColorChange', function() {}),
+            (t = a.data('text')) && s.html(t),
+            a.after(s),
+            a.bind('change', function() {
+              a
                 .next('.colorPicker-picker')
                 .css('background-color', o.fn.colorPicker.toHex(o(this).val()));
             }),
-            c.val(a),
-            'input' === c[0].tagName.toLowerCase())
+            a.val(i),
+            'input' === a[0].tagName.toLowerCase())
           )
             try {
-              c.attr('type', 'hidden');
+              a.attr('type', 'hidden');
             } catch (o) {
-              c.css('visibility', 'hidden').css('position', 'absolute');
+              a.css('visibility', 'hidden').css('position', 'absolute');
             }
-          else c.hide();
-          t++;
+          else a.hide();
+          r++;
         });
       }),
         o.extend(!0, o.fn.colorPicker, {
@@ -213,23 +213,23 @@ webpackJsonp([6, 16, 18], {
           previewColor: function(o) {
             e.css('background-color', o);
           },
-          bindPalette: function(c, t, r) {
-            (r = r || o.fn.colorPicker.toHex(t.css('background-color'))),
-              t.bind({
+          bindPalette: function(c, r, l) {
+            (l = l || o.fn.colorPicker.toHex(r.css('background-color'))),
+              r.bind({
                 click: function(e) {
-                  (l = r), o.fn.colorPicker.changeColor(r);
+                  (t = l), o.fn.colorPicker.changeColor(l);
                 },
                 mouseover: function(e) {
-                  (l = c.val()),
+                  (t = c.val()),
                     o(this).css('border-color', '#598FEF'),
-                    c.val(r),
-                    o.fn.colorPicker.previewColor(r);
-                },
-                mouseout: function(t) {
-                  o(this).css('border-color', '#000'),
-                    c.val(e.css('background-color')),
                     c.val(l),
                     o.fn.colorPicker.previewColor(l);
+                },
+                mouseout: function(r) {
+                  o(this).css('border-color', '#000'),
+                    c.val(e.css('background-color')),
+                    c.val(t),
+                    o.fn.colorPicker.previewColor(t);
                 },
               });
           },
@@ -260,7 +260,7 @@ webpackJsonp([6, 16, 18], {
   296: function(o, e, c) {
     'use strict';
     function t() {
-      0 === $('.colorPicker-picker').length &&
+      0 == $('.colorPicker-picker').length &&
         ($('.colorPicker-palette').remove(),
         $('#color-bg').colorPicker(),
         $('#color-tag').colorPicker());

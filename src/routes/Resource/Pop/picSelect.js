@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default value => {
   let emo;
   switch (value) {
@@ -13,7 +12,7 @@ export default value => {
       emo = '2';
       break;
   }
-  // 变文字
+  //变文字
   $('#tag-title').bind('input propertychange', function() {
     $('#tag').html($(this).val());
   });

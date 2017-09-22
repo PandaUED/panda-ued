@@ -54,7 +54,7 @@ export default () => {
           showIcon
           style={{ display: 'none' }}
         />
-        <Preview id="preview" height="auto" />
+        <img id="preview" height="auto" />
       </Cover>
       <SideCard id="sidecard">
         <h3>请选择模板:</h3>

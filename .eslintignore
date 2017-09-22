@@ -1,2 +1,4 @@
 **/node_modules/**
 **/vendor.js
+src/routes/Resource/Pop/*.js
+src/routes/Resource/Cover/*.js

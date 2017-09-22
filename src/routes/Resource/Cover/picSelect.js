@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default value => {
   let emo;
   switch (value) {
@@ -38,7 +37,7 @@ export default value => {
   $('#color-tag').change();
   $('#tag-title').change();
   $('#tag').html($('#tag-title').val());
-  $('#cover-bg').css('background-image', `url(/img/tools/emo/${emo}.png)`);
+  $('#cover-bg').css('background-image', 'url(/img/tools/emo/' + emo + '.png)');
   $('#cover').css('background-color', $('#color-bg').val());
   $('#cover-content').css('background-color', $('#color-bg').val());
   $('#tag').css('background-color', $('#color-tag').val());

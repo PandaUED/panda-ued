@@ -26,21 +26,21 @@ webpackJsonp([3, 7, 25], {
       x = a(y),
       S = (0, d.default)(
         [
-          '\n\t\twidth: 3rem;\n\t\theight: 3rem;\n\t\tcursor: pointer;\n\t\tborder-radius: 50%;\n\t\tcolor:#fff;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tbackground: ',
-          ';\n\t\tposition: fixed;\n\t\tbottom:2rem;\n\t\tright:2rem;\n\t\tz-index: 9999999;\n\t\t',
+          '\n      width: 3rem;\n      height: 3rem;\n      cursor: pointer;\n      border-radius: 50%;\n      color: #fff;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: ',
+          ';\n      position: fixed;\n      bottom: 2rem;\n      right: 2rem;\n      z-index: 9999999;\n    ',
         ],
         [
-          '\n\t\twidth: 3rem;\n\t\theight: 3rem;\n\t\tcursor: pointer;\n\t\tborder-radius: 50%;\n\t\tcolor:#fff;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tbackground: ',
-          ';\n\t\tposition: fixed;\n\t\tbottom:2rem;\n\t\tright:2rem;\n\t\tz-index: 9999999;\n\t\t',
+          '\n      width: 3rem;\n      height: 3rem;\n      cursor: pointer;\n      border-radius: 50%;\n      color: #fff;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: ',
+          ';\n      position: fixed;\n      bottom: 2rem;\n      right: 2rem;\n      z-index: 9999999;\n    ',
         ]
       ),
       z = (0, d.default)([''], ['']),
       w = (0, d.default)(
         [
-          '\n\t\tposition: fixed;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\ttop:0;\n\t\tleft: 0;\n\t\tz-index: 999999;\n\t\t',
+          '\n        position: fixed;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 999999;\n      ',
         ],
         [
-          '\n\t\tposition: fixed;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\ttop:0;\n\t\tleft: 0;\n\t\tz-index: 999999;\n\t\t',
+          '\n        position: fixed;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 999999;\n      ',
         ]
       ),
       $ = i(109),

@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default () => {
   document.documentElement.scrollTop = document.body.scrollTop = 0;
   $('#factory').addClass('cutting');
@@ -6,8 +5,8 @@ export default () => {
     allowTaint: false,
     taintTest: false,
     onrendered: canvas => {
-      const dataUrl = canvas.toDataURL();
-      const newImg = $('img').attr('src', dataUrl);
+      let dataUrl = canvas.toDataURL();
+      let newImg = $('img').attr('src', dataUrl);
       $('.ant-alert').show();
       $('#factory').append(newImg);
     },

@@ -1,9 +1,8 @@
-/* eslint-disable */
 (function($) {
   /**
 	 * Create a couple private variables.
-	 * */
-  let selectorOwner,
+	 **/
+  var selectorOwner,
     activePalette,
     cItterate = 0,
     templates = {
@@ -20,11 +19,11 @@
 
   /**
 	 * Create our colorPicker function
-	 * */
+	 **/
   $.fn.colorPicker = function(options) {
     return this.each(function() {
       // Setup time. Clone new elements from our templates, set some IDs, make shortcuts, jazzercise.
-      let element = $(this),
+      var element = $(this),
         opts = $.extend({}, $.fn.colorPicker.defaults, options),
         defaultColor = $.fn.colorPicker.toHex(
           element.val().length > 0 ? element.val() : opts.pickerDefault
@@ -32,7 +31,7 @@
         newControl = templates.control.clone(),
         newPalette = templates.palette
           .clone()
-          .attr('id', `colorPicker_palette-${cItterate}`),
+          .attr('id', 'colorPicker_palette-' + cItterate),
         newHexLabel = templates.hexLabel.clone(),
         newHexField = templates.hexField.clone(),
         paletteId = newPalette[0].id,
@@ -41,7 +40,7 @@
 
       /**
 			 * Build a color palette.
-			 * */
+			 **/
       $.each(opts.colors, function(i) {
         swatch = templates.swatch.clone();
 
@@ -49,32 +48,32 @@
           swatch.addClass(transparent).text('X');
           $.fn.colorPicker.bindPalette(newHexField, swatch, transparent);
         } else {
-          swatch.css('background-color', `#${this}`);
+          swatch.css('background-color', '#' + this);
           $.fn.colorPicker.bindPalette(newHexField, swatch);
         }
         swatch.appendTo(newPalette);
       });
 
-      newHexLabel.attr('for', `colorPicker_hex-${cItterate}`);
+      newHexLabel.attr('for', 'colorPicker_hex-' + cItterate);
 
       newHexField.attr({
-        id: `colorPicker_hex-${cItterate}`,
+        id: 'colorPicker_hex-' + cItterate,
         value: defaultColor,
       });
 
       newHexField.bind('keydown', function(event) {
         if (event.keyCode === 13) {
-          const hexColor = $.fn.colorPicker.toHex($(this).val());
-          $.fn.colorPicker.changeColor(hexColor || element.val());
+          var hexColor = $.fn.colorPicker.toHex($(this).val());
+          $.fn.colorPicker.changeColor(hexColor ? hexColor : element.val());
         }
         if (event.keyCode === 27) {
           $.fn.colorPicker.hidePalette();
         }
       });
 
-      newHexField.bind('keyup', event => {
-        const hexColor = $.fn.colorPicker.toHex($(event.target).val());
-        $.fn.colorPicker.previewColor(hexColor || element.val());
+      newHexField.bind('keyup', function(event) {
+        var hexColor = $.fn.colorPicker.toHex($(event.target).val());
+        $.fn.colorPicker.previewColor(hexColor ? hexColor : element.val());
       });
 
       $('<div class="colorPicker_hexWrap" />')
@@ -93,24 +92,22 @@
 
       /**
 			 * Build replacement interface for original color input.
-			 * */
+			 **/
       newControl.css('background-color', defaultColor);
 
       newControl.bind('click', function() {
         if (element.is(':not(:disabled)')) {
-          $.fn.colorPicker.togglePalette($(`#${paletteId}`), $(this));
+          $.fn.colorPicker.togglePalette($('#' + paletteId), $(this));
         }
       });
 
       if (options && options.onColorChange) {
         newControl.data('onColorChange', options.onColorChange);
       } else {
-        newControl.data('onColorChange', () => {});
+        newControl.data('onColorChange', function() {});
       }
 
-      if ((controlText = element.data('text'))) {
-        newControl.html(controlText);
-      }
+      if ((controlText = element.data('text'))) newControl.html(controlText);
 
       element.after(newControl);
 
@@ -140,31 +137,31 @@
 
   /**
 	 * Extend colorPicker with... all our functionality.
-	 * */
+	 **/
   $.extend(true, $.fn.colorPicker, {
     /**
 		 * Return a Hex color, convert an RGB value and return Hex, or return false.
 		 *
 		 * Inspired by http://code.google.com/p/jquery-color-utils
-		 * */
-    toHex(color) {
+		 **/
+    toHex: function(color) {
       // If we have a standard or shorthand Hex color, return that value.
       if (color.match(/[0-9A-F]{6}|[0-9A-F]{3}$/i)) {
-        return color.charAt(0) === '#' ? color : `#${color}`;
+        return color.charAt(0) === '#' ? color : '#' + color;
 
         // Alternatively, check for RGB color, then convert and return it as Hex.
       } else if (
         color.match(/^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/)
       ) {
-        let c = [
+        var c = [
             parseInt(RegExp.$1, 10),
             parseInt(RegExp.$2, 10),
             parseInt(RegExp.$3, 10),
           ],
           pad = function(str) {
             if (str.length < 2) {
-              for (let i = 0, len = 2 - str.length; i < len; i++) {
-                str = `0${str}`;
+              for (var i = 0, len = 2 - str.length; i < len; i++) {
+                str = '0' + str;
               }
             }
 
@@ -172,11 +169,11 @@
           };
 
         if (c.length === 3) {
-          let r = pad(c[0].toString(16)),
+          var r = pad(c[0].toString(16)),
             g = pad(c[1].toString(16)),
             b = pad(c[2].toString(16));
 
-          return `#${r}${g}${b}`;
+          return '#' + r + g + b;
         }
 
         // Otherwise we wont do anything.
@@ -187,10 +184,10 @@
 
     /**
 		 * Check whether user clicked on the selector or owner.
-		 * */
-    checkMouse(event, paletteId) {
-      let selector = activePalette,
-        selectorParent = $(event.target).parents(`#${selector.attr('id')}`)
+		 **/
+    checkMouse: function(event, paletteId) {
+      var selector = activePalette,
+        selectorParent = $(event.target).parents('#' + selector.attr('id'))
           .length;
 
       if (
@@ -206,8 +203,8 @@
 
     /**
 		 * Hide the color palette modal.
-		 * */
-    hidePalette() {
+		 **/
+    hidePalette: function() {
       $(document).unbind('mousedown', $.fn.colorPicker.checkMouse);
 
       $('.colorPicker-palette').hide();
@@ -215,9 +212,9 @@
 
     /**
 		 * Show the color palette modal.
-		 * */
-    showPalette(palette) {
-      const hexColor = selectorOwner.prev('input').val();
+		 **/
+    showPalette: function(palette) {
+      var hexColor = selectorOwner.prev('input').val();
 
       palette.css({
         top: selectorOwner.offset().top + selectorOwner.outerHeight(),
@@ -233,8 +230,8 @@
 
     /**
 		 * Toggle visibility of the colorPicker palette.
-		 * */
-    togglePalette(palette, origin) {
+		 **/
+    togglePalette: function(palette, origin) {
       // selectorOwner is the clicked .colorPicker-picker.
       if (origin) {
         selectorOwner = origin;
@@ -251,8 +248,8 @@
 
     /**
 		 * Update the input with a newly selected color.
-		 * */
-    changeColor(value) {
+		 **/
+    changeColor: function(value) {
       selectorOwner.css('background-color', value);
       selectorOwner
         .prev('input')
@@ -272,24 +269,26 @@
 
     /**
 		 * Preview the input with a newly selected color.
-		 * */
-    previewColor(value) {
+		 **/
+    previewColor: function(value) {
       selectorOwner.css('background-color', value);
     },
 
     /**
 		 * Bind events to the color palette swatches.
 		 */
-    bindPalette(paletteInput, element, color) {
-      color = color || $.fn.colorPicker.toHex(element.css('background-color'));
+    bindPalette: function(paletteInput, element, color) {
+      color = color
+        ? color
+        : $.fn.colorPicker.toHex(element.css('background-color'));
 
       element.bind({
-        click(ev) {
+        click: function(ev) {
           lastColor = color;
 
           $.fn.colorPicker.changeColor(color);
         },
-        mouseover(ev) {
+        mouseover: function(ev) {
           lastColor = paletteInput.val();
 
           $(this).css('border-color', '#598FEF');
@@ -298,7 +297,7 @@
 
           $.fn.colorPicker.previewColor(color);
         },
-        mouseout(ev) {
+        mouseout: function(ev) {
           $(this).css('border-color', '#000');
 
           paletteInput.val(selectorOwner.css('background-color'));
@@ -323,7 +322,7 @@
 	 * $('#element1').colorPicker({pickerDefault: 'efefef', transparency: true});
 	 * $('#element2').colorPicker({pickerDefault: '333333', colors: ['333333', '111111']});
 	 *
-	 * */
+	 **/
   $.fn.colorPicker.defaults = {
     // colorPicker default selected color.
     pickerDefault: 'FFFFFF',
