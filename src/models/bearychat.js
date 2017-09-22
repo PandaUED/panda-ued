@@ -39,14 +39,18 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(location => {
-        if (location.pathname === '/home/page/trello')
+        if (location.pathname === '/home/page/trello') {
           dispatch({ type: 'GetTrello' });
-        if (location.pathname === '/home/page/changelog')
+        }
+        if (location.pathname === '/home/page/changelog') {
           dispatch({ type: 'GetFe' });
-        if (location.pathname === '/home/page/redmine')
+        }
+        if (location.pathname === '/home/page/redmine') {
           dispatch({ type: 'GetRedmine' });
-        if (location.pathname === '/home/page/news')
+        }
+        if (location.pathname === '/home/page/news') {
           dispatch({ type: 'GetNews' });
+        }
       });
     },
   },

@@ -19,8 +19,9 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(location => {
-        if (location.pathname.indexOf('/pand/') !== -1)
+        if (location.pathname.indexOf('/pand/') !== -1) {
           dispatch({ type: 'GET' });
+        }
       });
     },
   },

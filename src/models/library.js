@@ -20,8 +20,9 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(location => {
-        if (location.pathname.indexOf('/library') !== -1)
+        if (location.pathname.indexOf('/library') !== -1) {
           dispatch({ type: 'GET' });
+        }
       });
     },
   },
