@@ -1,6 +1,5 @@
 import { connect } from 'dva';
 import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
 import React from 'react';
 import setcookie from '../../utils/setcookie';
 import './index.scss';
@@ -18,7 +17,11 @@ class App extends React.Component {
 	}
 
 	componentWillMount() {
-		Object.entries(cookie).map(data => setcookie(data[0], data[1]))
+		Object.entries(cookie).map(data => setcookie(data[0], data[1]));
+		NProgress.start();
+	}
+
+	componentWillUnmount() {
 		NProgress.start();
 	}
 
@@ -26,11 +29,20 @@ class App extends React.Component {
 		NProgress.done();
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const {loading} = nextProps;
+		(loading)
+			? NProgress.start()
+			: NProgress.done();
+	}
+
 	render() {
 		const {loading} = this.props;
-		if (loading) NProgress.start();
-		if (!loading) NProgress.done();
-		return <div/>;
+		(loading)
+			? NProgress.start()
+			: NProgress.done();
+
+		return null;
 	}
 }
 
