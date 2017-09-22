@@ -1,22 +1,19 @@
 import styled from 'styled-components';
 import { Footer, Header } from '../../components';
 
-export default ({children}) => {
+export default ({ children }) => {
+  const Layout = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  `;
 
-	const Layout = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	`;
-
-	return (
-		<Layout>
-			<Header/>
-			<Layout style={{paddingTop: '80px'}}>
-				{children}
-			</Layout>
-			<Footer/>
-		</Layout>
-	);
-}
+  return (
+    <Layout>
+      <Header />
+      <Layout style={{ paddingTop: '80px' }}>{children}</Layout>
+      <Footer />
+    </Layout>
+  );
+};
