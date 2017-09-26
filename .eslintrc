@@ -23,6 +23,7 @@
 		"react/no-array-index-key": [0],
 		"react/no-multi-comp": [0],
 		// no
+		"no-prototype-builtins": [0],
 		"no-unused-expressions": [0],
 		"no-plusplus": [0],
 		"no-shadow": [0],
