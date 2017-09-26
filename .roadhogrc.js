@@ -45,7 +45,7 @@ export default {
     },
   },
   dllPlugin: {
-    exclude: ['babel-runtime'],
-    include: ['dva/router', 'dva/saga', 'dva/fetch'],
+		exclude: ['babel-runtime', 'gulp', 'eslint'],
+		include: ['dva/router', 'dva/saga', 'dva/fetch', 'dva/dynamic']
   },
 };

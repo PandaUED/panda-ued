@@ -1,138 +1,150 @@
-@import "var";
+@import 'var';
+
+:global {
+  @import 'prism';
+}
+
 .markdown {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 
-	* {
-		box-sizing: border-box;
-	}
-	> p, pre, img, blockquote, ul, ol {
-		margin-bottom: 1rem;
-	}
-	p, li {
-		line-height: 1.5;
-	}
-	li {
-		&:before {
-			content: "◌";
-			margin-right: 1rem;
-			font-size: .5em;
-		}
-		& + li {
-			margin-top: .5rem;
-		}
-	}
-	strong {
-		color: #333;
-	}
-	img {
-		max-width: 100%;
-		height: auto;
-	}
-	code {
-		$code-color: desaturate($c-primary, 40%);
-		font-size: .8em;
-		font-family: $font-code;
-		font-weight: 400;
-		border-radius: 3px;
-		background: rgba($code-color, 0.08);
-		color: darken($code-color, 20%);
-		padding: .2em .4em
-	}
-	blockquote {
-		border-left: 4px solid $c-primary;
-		padding-left: 1.5rem;
-		width: 100%;
-		* {
-			color: #888;
-		}
-	}
-	pre {
-		display: block;
-		position: relative;
-		> code {
-			display: block;
-			border-radius: 0;
-			background: #222;
-			line-height: 1.8;
-			color: #ddd;
-		}
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-bottom: 2rem;
-		font-weight: 600;
-		color: #222;
-	}
-	h1, h2 {
-		margin-top: 3rem;
-	}
+  * {
+    box-sizing: border-box;
+  }
+  > p,
+  pre,
+  img,
+  blockquote,
+  ul,
+  ol {
+    margin-bottom: 1rem;
+  }
+  p,
+  li {
+    line-height: 1.5;
+  }
+  li {
+    &:before {
+      content: '◌';
+      margin-right: 1rem;
+      font-size: 0.5em;
+    }
+    & + li {
+      margin-top: 0.5rem;
+    }
+  }
+  strong {
+    color: #333;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  code {
+    $code-color: desaturate($c-primary, 40%);
+    font-size: 0.8em;
+    font-family: $font-code;
+    font-weight: 400;
+    border-radius: 3px;
+    background: rgba($code-color, 0.08);
+    color: darken($code-color, 20%);
+    padding: 0.2em 0.4em;
+  }
+  blockquote {
+    border-left: 4px solid $c-primary;
+    padding-left: 1.5rem;
+    width: 100%;
+    * {
+      color: #888;
+    }
+  }
+  pre {
+    display: block;
+    position: relative;
+    > code {
+      display: block;
+      border-radius: 0;
+      background: #222;
+      line-height: 1.8;
+      color: #ddd;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #222;
+  }
+  h1,
+  h2 {
+    margin-top: 3rem;
+  }
 
-	h3, h4 {
-		margin-top: 4rem;
-	}
-	h1 {
-		font-size: 2.1rem;
-	}
-	h2 {
-		font-size: 1.9rem;
-		&:after {
-			content: " #";
-			color: #e3e3e3
-		}
-	}
-	h3 {
-		font-size: 1.6rem;
-	}
-	h4 {
-		font-size: 1.4rem;
-	}
-	h5 {
-		font-size: 1.2rem;
-	}
-	h6 {
-		font-size: 1rem;
-	}
-	kbd {
-		display: inline-block;
-		font-size: .9em;
-		height: 1.2em;
-		line-height: 1.2em;
-		padding: 0 .4em 1.3em;
-		font-family: $font-code;
-		background-color: #fafbfc;
-		border: solid 1px #c6cbd1;
-		border-bottom-color: #959da5;
-		box-shadow: inset 0 -1px 0 #959da5;
-		border-radius: 2px;
-	}
+  h3,
+  h4 {
+    margin-top: 4rem;
+  }
+  h1 {
+    font-size: 2.1rem;
+  }
+  h2 {
+    font-size: 1.9rem;
+    &:after {
+      content: ' #';
+      color: #e3e3e3;
+    }
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  kbd {
+    display: inline-block;
+    font-size: 0.9em;
+    height: 1.2em;
+    line-height: 1.2em;
+    padding: 0 0.4em 1.3em;
+    font-family: $font-code;
+    background-color: #fafbfc;
+    border: solid 1px #c6cbd1;
+    border-bottom-color: #959da5;
+    box-shadow: inset 0 -1px 0 #959da5;
+    border-radius: 2px;
+  }
 
-	table {
-		border-spacing: 0;
-		border-collapse: collapse;
-		border: 2px solid #eee;
-		width: 100%;
-	}
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 2px solid #eee;
+    width: 100%;
+  }
 
-	th {
-		font-weight: 600;
-	}
-	td {
-		line-height: 1.5;
-	}
+  th {
+    font-weight: 600;
+  }
+  td {
+    line-height: 1.5;
+  }
 
-	th,
-	td {
-		padding: 1rem;
-		border: .5px solid #f8f8f8;
-	}
-	thead {
-		color: #333;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .05);
-	}
-
+  th,
+  td {
+    padding: 1rem;
+    border: 0.5px solid #f8f8f8;
+  }
+  thead {
+    color: #333;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+  }
 }

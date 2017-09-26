@@ -1,0 +1,106 @@
+code[class*='language-'],
+pre[class*='language-'] {
+  color: $c-white;
+  direction: ltr;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+pre[class*='language-'] {
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #222;
+}
+
+:not(pre) > code[class*='language-'] {
+  border-radius: 0.3em;
+  padding: 0.1em;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token {
+  &.punctuation,
+  &.operator,
+  &.entity,
+  &.url,
+  &.variable {
+    color: $c-white;
+  }
+
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: $c-grey;
+  }
+
+  &.keyword,
+  &.tag,
+  &.constant,
+  &.symbol,
+  &.deleted {
+    color: $c-red;
+  }
+
+  &.regex,
+  &.important {
+    color: $c-orange;
+  }
+
+  &.atrule,
+  &.string,
+  &.attr-value {
+    color: $c-yellow;
+  }
+
+  &.selector,
+  &.property,
+  &.attr-name,
+  &.char,
+  &.builtin,
+  &.inserted {
+    color: $c-green;
+  }
+
+  &.function {
+    color: $c-blue;
+  }
+
+  &.boolean,
+  &.number {
+    color: $c-purple;
+  }
+
+  &.important,
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    cursor: help;
+  }
+}

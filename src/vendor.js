@@ -1,5 +1,8 @@
 import 'classnames';
 import 'dva';
+import 'dva/router';
+import 'dva/fetch';
+import 'dva/dynamic';
 import 'dva-loading';
 import 'gitment';
 import 'gitment/style/default.css';
@@ -12,5 +15,6 @@ import 'react';
 import 'react-dom';
 import 'react-lazyload';
 import 'react-typist';
-import 'styled-components'
-import 'polished'
+import 'styled-components';
+import 'polished';
+import 'prismjs';
