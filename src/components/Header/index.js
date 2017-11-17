@@ -43,8 +43,7 @@ export default () => {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 3px solid
-        ${pathname.indexOf(to) !== -1 ? style.color.primary : 'transparent'};
+      border-bottom: 3px solid ${pathname.indexOf(to) !== -1 ? style.color.primary : 'transparent'};
     `;
     return <Item to={to} children={title} />;
   };

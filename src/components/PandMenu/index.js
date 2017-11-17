@@ -64,13 +64,7 @@ export default ({ data, ...other }) => {
   _.forEach(data, (item, key) => {
     List.push(<Title key={key}>{key}</Title>);
     _.forEach(item, page => {
-      List.push(
-        <MenuItem
-          key={key + page.title}
-          title={page}
-          to={_.kebabCase(page.name)}
-        />
-      );
+      List.push(<MenuItem key={key + page.title} title={page} to={_.kebabCase(page.name)} />);
     });
   });
 

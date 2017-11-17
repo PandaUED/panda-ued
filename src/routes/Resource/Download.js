@@ -3,7 +3,9 @@ import { Markdown } from '../../components';
 import { DownloadList } from '../../config';
 
 export default () => {
-  const View = styled.div`margin-left: 2rem;`;
+  const View = styled.div`
+    margin-left: 2rem;
+  `;
 
   const DownloadBox = styled.div`
     display: flex;
@@ -32,7 +34,8 @@ export default () => {
     font-size: 0.9rem;
   `;
 
-  const Md = '# 资源下载\n这里提供 Panda Design 相关设计资源和设计工具的下载，更多设计资源正在整理和完善中。';
+  const Md =
+    '# 资源下载\n这里提供 Panda Design 相关设计资源和设计工具的下载，更多设计资源正在整理和完善中。';
 
   const DownloadCard = ({ url, icon, title, desc }) => {
     const Icon = styled.div`

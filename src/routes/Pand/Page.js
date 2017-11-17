@@ -78,10 +78,7 @@ class Pand extends React.Component {
     if (!loading) {
       const Split = '## API';
       const Data = pand.body.split(Split);
-      const PandPath = `https://${path.join(
-        'xmui.xiongmaojinku.com/',
-        _.kebabCase(pand.name)
-      )}`;
+      const PandPath = `https://${path.join('xmui.xiongmaojinku.com/', _.kebabCase(pand.name))}`;
 
       if (this.state.fullscreen) {
         CodeView = CodeView.extend`
@@ -117,9 +114,7 @@ class Pand extends React.Component {
                 </Url>
                 <MarkdownCode data={`\`\`\`jsx\n${pand.code}\n\`\`\``} />
                 <Button onClick={this.onClick}>
-                  <Icon
-                    type={this.state.fullscreen ? 'shrink' : 'arrows-alt'}
-                  />
+                  <Icon type={this.state.fullscreen ? 'shrink' : 'arrows-alt'} />
                 </Button>
               </CodeView>
             </div>
@@ -132,11 +127,7 @@ class Pand extends React.Component {
 
     return (
       <View>
-        <Spin
-          style={{ width: '100%', lineHeight: '720px' }}
-          spinning={loading}
-          size="large"
-        />
+        <Spin style={{ width: '100%', lineHeight: '720px' }} spinning={loading} size="large" />
         {Content}
         <Comment />
       </View>

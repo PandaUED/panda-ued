@@ -10,7 +10,9 @@ export default () => {
     justify-content: space-between;
     margin-top: 4rem;
   `;
-  const Box = styled.div`width: 20rem;`;
+  const Box = styled.div`
+    width: 20rem;
+  `;
 
   const Title = styled.div`
     font-weight: 600;

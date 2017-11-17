@@ -34,9 +34,7 @@ marked.setOptions({
   smartLists: true,
   smartypants: false,
   highlight: (code, lang) => {
-    const language = !prism.languages.hasOwnProperty(lang)
-      ? extensions[lang] || 'markup'
-      : lang;
+    const language = !prism.languages.hasOwnProperty(lang) ? extensions[lang] || 'markup' : lang;
     return prism.highlight(code, prism.languages[language]);
   },
 });

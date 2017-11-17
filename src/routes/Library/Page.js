@@ -47,14 +47,7 @@ export default connect(mapStateToProps)(({ loading, libPage, location }) => {
         border-bottom: 1px solid #f8f8f8;
       `;
       return (
-        <Card
-          key={key}
-          to={path.join(
-            '/preview',
-            location.pathname.split('/')[2],
-            item.title
-          )}
-        >
+        <Card key={key} to={path.join('/preview', location.pathname.split('/')[2], item.title)}>
           <Cover />
           <Title>{item.title}</Title>
         </Card>
@@ -63,11 +56,7 @@ export default connect(mapStateToProps)(({ loading, libPage, location }) => {
   }
   return (
     <CardList>
-      <Spin
-        style={{ flex: 1, lineHeight: '720px' }}
-        spinning={loading}
-        size="large"
-      />
+      <Spin style={{ flex: 1, lineHeight: '720px' }} spinning={loading} size="large" />
       {Page}
       <Comment />
     </CardList>

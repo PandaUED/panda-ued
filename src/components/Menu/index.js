@@ -36,9 +36,7 @@ export default ({ data, ...other }) => {
     return <Item to={to} children={title} />;
   };
 
-  const MenuList = data.map((item, key) => (
-    <MenuItem key={key} title={item.title} to={item.to} />
-  ));
+  const MenuList = data.map((item, key) => <MenuItem key={key} title={item.title} to={item.to} />);
 
   return <Menu {...other}>{MenuList}</Menu>;
 };

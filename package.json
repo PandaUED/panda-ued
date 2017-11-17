@@ -1,6 +1,11 @@
 {
 	"title": "panda-ued",
 	"description": "PandaDesign 熊猫用户体验中心",
+	"main": "src/index.html",
+	"repository": [
+		"git@git.coding.net:canisminor1990/panda-ued.git",
+		"git@github.com:canisminor1990/panda-ued.git"
+	],
 	"version": "3.0.0",
 	"author": "CanisMinor",
 	"contact": "i@canisminor.cc",
@@ -10,8 +15,8 @@
 		"build:precache": "sw-precache --config=.precache.js",
 		"build:dll": "roadhog buildDll",
 		"ssh": "ssh root@172.20.200.10",
-		"eslint": "eslint --fix --ext .js src",
-		"lint": "lint-staged"
+		"lint": "lint-staged",
+		"lint:es": "eslint --fix --ext .js src"
 	},
 	"pre-commit": [
 		"lint"
@@ -23,45 +28,51 @@
 		],
 		"src/**/*.js": [
 			"eslint --fix",
-			"prettier --trailing-comma es5 --single-quote --write",
+			"lint:style",
 			"git add"
 		]
-	},
-	"engines": {
-		"install-node": "6.9.2"
 	},
 	"dependencies": {
 		"antd": "^2.13.1",
 		"babel-runtime": "^6.26.0",
 		"classnames": "^2.2.5",
-		"dva": "^2.0.3",
-		"dva-loading": "^1.0.0",
+		"dva": "^2.1.0",
+		"dva-loading": "^1.0.4",
 		"gitment": "^0.0.3",
 		"history": "^4.7.2",
 		"nprogress": "^0.2.0",
 		"path": "^0.12.7",
 		"polished": "^1.7.0",
-		"prismjs": "^1.8.1",
-		"react": "^15.6.1",
-		"react-dom": "^15.4.0",
+		"prismjs": "^1.8.4",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.1",
 		"react-lazyload": "^2.2.7",
 		"react-typist": "^1.1.1",
-		"styled-components": "^2.1.2"
+		"styled-components": "^2.2.3"
 	},
 	"devDependencies": {
-		"babel-eslint": "^8.0.0",
-		"babel-plugin-dva-hmr": "^0.3.2",
-		"babel-plugin-import": "^1.4.0",
+		"babel-core": "^6.26.0",
+		"babel-eslint": "^8.0.2",
+		"babel-plugin-dva-hmr": "^0.4.0",
+		"babel-plugin-import": "^1.6.2",
 		"babel-plugin-lodash": "^3.2.11",
-		"babel-plugin-transform-runtime": "^6.9.0",
+		"babel-plugin-styled-components": "^1.2.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-env": "^1.6.0",
+		"babel-preset-stage-0": "^6.24.1",
 		"cssnano": "^3.10.0",
 		"del": "^3.0.0",
-		"eslint": "^4.7.2",
-		"eslint-config-airbnb": "^15.1.0",
+		"eslint": "^4.11.0",
+		"eslint-config-prettier": "^2.6.0",
+		"eslint-config-standard": "^10.2.1",
+		"eslint-plugin-flowtype": "^2.37.0",
 		"eslint-plugin-import": "^2.7.0",
-		"eslint-plugin-jsx-a11y": "^5.1.1",
-		"eslint-plugin-react": "^7.1.0",
-		"expect": "^1.20.2",
+		"eslint-plugin-node": "^5.2.0",
+		"eslint-plugin-prettier": "^2.3.1",
+		"eslint-plugin-promise": "^3.5.0",
+		"eslint-plugin-react": "^7.4.0",
+		"eslint-plugin-standard": "^3.0.1",
+		"expect": "^21.2.1",
 		"fs-extra": "^4.0.2",
 		"gulp": "^3.9.1",
 		"gulp-cache": "^0.4.5",
@@ -76,10 +87,10 @@
 		"node-sass": "^4.5.3",
 		"postcss-pxtorem": "^4.0.1",
 		"pre-commit": "^1.2.2",
-		"prettier": "^1.7.0",
+		"prettier": "^1.8.2",
 		"redbox-react": "^1.3.2",
 		"require-dir": "^0.3.1",
-		"roadhog": "^1.2.2",
+		"roadhog": "^1.3.1",
 		"run-sequence": "^2.1.0",
 		"sass-loader": "^6.0.6",
 		"sw-precache": "^5.2.0"

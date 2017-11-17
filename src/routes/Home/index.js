@@ -37,7 +37,9 @@ export default () => {
     margin-bottom: 0.8rem;
     font-weight: 600;
   `;
-  const Desc = styled.div`z-index: 1;`;
+  const Desc = styled.div`
+    z-index: 1;
+  `;
 
   const ContentView = styled(View)`
     display: flex;

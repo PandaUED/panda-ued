@@ -17,6 +17,7 @@ const ResMenu = [
   { title: '资源下载', to: '/resource/download' },
   { title: '生成封面', to: '/resource/cover' },
   { title: '生成气泡', to: '/resource/pop' },
+  { title: '秀米转换', to: '/resource/editor' },
 ];
 
 const footBar = {

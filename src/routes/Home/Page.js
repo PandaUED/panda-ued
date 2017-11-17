@@ -13,9 +13,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps
-)(({ bearychat = [], robot = [], loading }) => {
+export default connect(mapStateToProps)(({ bearychat = [], robot = [], loading }) => {
   let data;
   if (!loading) data = buildMessage(bearychat, robot);
 
@@ -24,7 +22,9 @@ export default connect(
     padding: 0 1rem;
   `;
 
-  const Flex = styled.div`display: flex;`;
+  const Flex = styled.div`
+    display: flex;
+  `;
   const Content = styled.div`
     flex: 1;
     margin: 0 1rem;
@@ -36,7 +36,9 @@ export default connect(
   `;
   const Attachments = styled.div``;
 
-  const Date = styled.div`color: #999;`;
+  const Date = styled.div`
+    color: #999;
+  `;
 
   const columns = [
     {
@@ -54,9 +56,7 @@ export default connect(
         let List;
         if (record.content) {
           List = record.content.map((item, key) => {
-            return (
-              <Markdown className={style.item} key={key} data={item.text} />
-            );
+            return <Markdown className={style.item} key={key} data={item.text} />;
           });
         }
         return (

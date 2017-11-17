@@ -14,7 +14,9 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(({ pandtoc, loading }) => {
-  const PandView = styled(View)`display: flex;`;
+  const PandView = styled(View)`
+    display: flex;
+  `;
 
   return (
     <PandView>
