@@ -117,7 +117,7 @@ const DownloadList = [
 
 const gitment = {
   owner: 'canisminor1990',
-  repo: 'panda-comments',
+  repo: 'panda-ued',
   oauth: {
     client_id: '02fa8b502161ef0c498f',
     client_secret: '35631bd493e80ab463ff839a591e0c28257f9818',
