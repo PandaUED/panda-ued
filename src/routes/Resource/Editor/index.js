@@ -4,8 +4,8 @@ export default () => {
   const UEditor = styled.iframe`
     width: 100%;
     margin: 2rem;
-    height: 46.5rem;
+    height: 80rem;
   `;
 
-  return <UEditor src="http://hgs.xiumi.us/uedit/" frameBorder="none" scrolling="no" />;
+  return <UEditor src="http://hgs.xiumi.us/uedit/" frameBorder="none" />;
 };
