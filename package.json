@@ -4,7 +4,7 @@
 	"main": "src/index.html",
 	"repository": [
 		"git@git.coding.net:canisminor1990/panda-ued.git",
-		"git@github.com:PandaUED/panda-design.git"
+		"git@github.com:PandaUED/panda-ued.git"
 	],
 	"version": "3.0.0",
 	"author": "CanisMinor",
