@@ -17,6 +17,8 @@ export default connect(mapStateToProps)(({ loading, libPage, location }) => {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin: 2rem 0 0 1rem;
   `;
   const Card = styled(Link)`
